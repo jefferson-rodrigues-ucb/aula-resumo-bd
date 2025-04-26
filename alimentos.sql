@@ -62,3 +62,14 @@ select p.nome, p.preco, p.quantidade,
 from Produto p
 inner join Departamento d
 	on p.id_departamento = d.id;
+   
+-- Lucro por Departamento se vender todo o estoque
+select p.nome,
+	d.nome as Departamento,
+ p.preco * p.quantidade * (1 - d.desconto) as Lucro		
+from Produto p
+inner join Departamento d
+	on p.id_departamento = d.id;
+
+-- Lucro por Departamento se vender todo o estoque considerando custos com Fornecedor
+
